@@ -1,26 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500&family=Montserrat:ital,wght@0,500;1,400&family=Poppins:wght@500&family=Roboto&display=swap');
 
+*{
+    margin: 0;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
 
+#welcome-section{
+    height: 100vh;
+    width: 100vw;
+background-color: #545EBC;
+padding-top: 80px;
 
+}
 
+#nav-bar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    align-items: right;
+    background-color: #7B85DF;
+    width: 100vw;
+    height:70px;
+    font-size: 35px;
+    position: fixed;
+    top: 0;
+}
 
+#nav-bar ul li{
+    margin-top: 12px;
+    margin-right: 40px;
+text-decoration: none;
+cursor: pointer;
+color: black;
+list-style-type: none;
 
+}
 
+#welcome-section h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+color: #D1C2FF;
+font-size: 45px;
+}
+#welcome-section #nav-bar a{
+    text-decoration: none;
+}
 
+#welcome-section #nav-bar ul li:hover{
+    color: white;
+    transform: scale(1.1);
+}
 
+#projects{
+    height: 100vh;
+    width: 100vw;
+    background-color: #BBFFE2;
+}
 
+#welcome-section p{
+    font-size: 200px;
+    display: inline-block;
+    justify-content: center;
+    padding-top: 80px;
+    color: white;
+text-align: center;
+background-color: yellow;
+}
+#welcome-section a{
+    text-decoration: none;
+    color: white;
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
+#welcome-section p:hover{
+color: black;
+transform: scale(1.1);
+}
 
 @media{
     
