@@ -10,7 +10,11 @@
     width: 100vw;
 background-color: #545EBC;
 padding-top: 80px;
-
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin: 0 auto;
 }
 
 #nav-bar ul{
@@ -48,11 +52,11 @@ list-style-type: none;
 color: #D1C2FF;
 font-size: 45px;
 }
-#welcome-section #nav-bar a{
+ #nav-bar a{
     text-decoration: none;
 }
 
-#welcome-section #nav-bar ul li:hover{
+ #nav-bar ul li:hover{
     color: white;
     transform: scale(1.1);
 }
@@ -70,7 +74,7 @@ font-size: 45px;
     padding-top: 80px;
     color: white;
 text-align: center;
-background-color: yellow;
+padding-bottom: 200px;
 }
 #welcome-section a{
     text-decoration: none;
@@ -81,6 +85,45 @@ background-color: yellow;
 color: black;
 transform: scale(1.1);
 }
+/*----------------------------------------------------------------------------------------*/
+
+#projects{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#tiles{
+   
+    width: 400px;
+    height: 500px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+}
+#project1{
+    max-width: 400px;
+    max-height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media{
     
