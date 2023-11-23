@@ -103,23 +103,72 @@ transform: scale(1.1);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 
 }
+
 #project1{
-    max-width: 400px;
+    max-width: 450px;
     max-height: 500px;
 }
 
+#project2{
+    max-width: 300px;
+    max-height: 450px;
+}
 
 
+#projects {
+    position: relative;
+    gap: 90px;
+}
+
+#projects h2 {
+    position: absolute;
+    top: 0;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    font-size: 50px;
+    letter-spacing: 3px;
+}
+
+#see-all-button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 100px;
+    height: 25px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#see-all-button button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: green;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+}
+#see-all-button button:hover{
+    background-color: #BBFFE2;
+    color: black;
+   font-size: 20px;
+}
 
 
+#project1, #project2 {
+ 
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
 
-
-
-
-
-
-
-
+#project1 img:hover, #project2 img:hover {
+    transform: scale(1.1);
+}
 
 
 
