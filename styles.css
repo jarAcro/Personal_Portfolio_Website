@@ -216,7 +216,7 @@ img {
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .tile:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: #2a2a2a;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
@@ -269,19 +269,44 @@ img {
   font-weight: 600;
   border-radius: 999px;
   padding: 0.6rem 1rem;
-  border: 1.5px solid #222;
+  border: 1px solid #222;
   color: var(--text);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  will-change: transform;
 }
+
 .btn-primary {
   background: var(--accent-gradient);
   border-color: transparent;
+  color: #fff;
+  margin-right: 10px;
 }
+
 .btn-ghost {
   background: #111;
+  color: #fff;
+  border: 1px solid #333;
 }
-.btn-ghost :hover{
-background-color: white;
-color: black;
+
+/* Hover/focus effects */
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  /* keep gradient background, just scale */
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+  background: #fff;     /* invert background */
+  color: #000;          /* text becomes black */
+  border-color: #fff;   /* border matches background */
 }
 /* ===== Form ===== */
 .form-help {
