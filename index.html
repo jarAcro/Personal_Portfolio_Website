@@ -1,59 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Chase Jarvis — Full-stack/IT specialist in Warsaw building elegant, accessible websites and resilient touring IT infrastructure. Portfolio, resume, and contact." />
 
+  <!-- Google Fonts: Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Chase Jarvis — Portfolio</title>
 </head>
 <body>
-  <nav id="nav-bar">
-    <ul>
-      <a href="#welcome-section>">
-      <li>About</li>
-    </a>
-    <a href="#projects">
-      <li>Work</li>
-    </a>
-    <a href="#contact">
-      <li>Contact</li>
-    </a>
-    </ul>
-      </nav>
-    <section id="welcome-section">
-      
-        <h1>Welcome to the Work of Chase Jarvis</h1>
-        <a href="#projects">
-        <p><i class='bx bxs-arrow-to-bottom'></i></p>
-        </a>
-      </section>
-      
-      <!--github link https://github.com/jarAcro?tab=repositories -->
-      <section id="projects">
-  <h2>Welcome to my Projects</h2>
-        <a id="project-tile1 tiles" href="https://github.com/jarAcro/Concierge_seating_webpage">
-          <img id= "project1" src ="/Personal_Portfolio_Website/website-concierge.jpg">
-         
-        </a>
-<a id="project-tile2 tiles" href="https://github.com/jarAcro/Tribute-FCC">
-  <img id="project2" src="/Personal_Portfolio_Website/project2-website.jpg">
-</a>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#about">Skip to content</a>
 
-      <a id="profile-link" href="https://github.com/jarAcro?tab=repositories"></a>
-
-      <a id="see-all-button" href="https://github.com/jarAcro?tab=repositories">
-        <button>See All >></button>
+  <!-- Accessible, sticky header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#about" aria-label="Go to top of page">
+        <span class="brand-mark" aria-hidden="true">CJ</span>
+        <span class="brand-text">Chase Jarvis</span>
       </a>
-        </section>
 
-<section id="contact">
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a class="nav-link" href="#about">About Me</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#resume">Resume</a></li>
+          <li><a class="nav-link" href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
- 
+  <main id="main" tabindex="-1">
+    <!-- ABOUT -->
+    <section id="about" class="section reveal" aria-labelledby="about-title">
+      <div class="container">
+        <h1 id="about-title" class="section-title">
+          <span class="accent-text">About Me</span>
+        </h1>
 
-</section>
+        <figure class="headshot-figure">
+          <img
+            src="images/headshot.jpg"
+            alt="Headshot of Chase Jarvis"
+            width="560"
+            height="560"
+            class="headshot"
+          />
+          <figcaption class="visually-hidden">Professional headshot</figcaption>
+        </figure>
 
-        <footer></footer>
+        <div class="about-copy">
+          <p>
+            I’m <strong>Chase Jarvis</strong>, an IT specialist and full-stack web developer based in <strong>Warsaw, Poland</strong>.
+            I bring <strong>3+ years</strong> of hands-on Level 1/2 support and on-site/remote operations from
+            <em>Cirque du Soleil’s Touring Show Division</em>, where I kept global productions running in high-pressure environments. :contentReference[oaicite:2]{index=2}
+          </p>
+          <p>
+            My day-to-day spans <strong>Windows 10/11</strong> user support with <strong>ServiceNow</strong>,
+            <strong>Active Directory/Entra ID</strong>, <strong>Intune</strong>, <strong>Office 365</strong>, and
+            <strong>Cisco Meraki</strong>. I automate repetitive work with <strong>Ansible</strong> and
+            <strong>PowerShell</strong>, including POS fleet updates. On every new city stop, I built complete site
+            infrastructure — racks, switches, Wi-Fi, miles of Cat5/fiber, and ISP coordination — then supported laptops,
+            servers, printers, and POS systems on show days. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+          </p>
+          <p>
+            Outside ops, I design <strong>accessible, fast websites</strong> in <strong>HTML5, CSS, and JavaScript</strong> and collaborate
+            clearly with international teams — translating complex issues into human-friendly language. I’m originally
+            from the U.S., now settled in Poland with my wife; I’m open to hybrid/remote roles and relocation for the right fit. :contentReference[oaicite:5]{index=5}
+          </p>
+
+          <ul aria-label="Core capabilities">
+            <li>Endpoint + account management: AD/Entra ID, Intune, MFA, O365</li>
+            <li>Networking: TCP/IP, DNS, DHCP, VPN, Wi-Fi; Cisco Meraki & security appliances</li>
+            <li>Automation & scripting: Ansible, PowerShell, Bash; SCCM familiarity</li>
+            <li>Web: Semantic, responsive, A11y-first front-ends (HTML/CSS/JS)</li>
+          </ul>
+
+          <p>
+            <strong>Contact:</strong> Warsaw · <a href="tel:+48792373779">+48 792 373 779</a> ·
+            <a href="mailto:chaseajarvis@gmail.com">chaseajarvis@gmail.com</a> ·
+            <a href="https://chasejarvisresume.netlify.app" rel="noopener">chasejarvisresume.netlify.app</a> :contentReference[oaicite:6]{index=6}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section reveal" aria-labelledby="portfolio-title">
+      <div class="container">
+        <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+
+        <div class="portfolio-grid" role="list">
+          <!-- Tile 1 -->
+          <article class="tile" role="listitem">
+            <a href="#" class="tile-link" aria-label="Open Edytakrzemien.pl project">
+              <figure class="tile-figure">
+                <img
+                  src="images/edytakrzemien-thumb.png"
+                  alt="Preview thumbnail of Edytakrzemien.pl"
+                  loading="lazy"
+                  width="480"
+                  height="300"
+                />
+                <figcaption class="tile-caption">
+                  <span class="tile-title">Edytakrzemien.pl</span>
+                  <span class="tile-subtitle">Artist website design & build</span>
+                </figcaption>
+              </figure>
+            </a>
+          </article>
+
+          <!-- Tile 2 -->
+          <article class="tile" role="listitem">
+            <a href="#" class="tile-link" aria-label="Open Resume webpage project">
+              <figure class="tile-figure">
+                <img
+                  src="images/resume-thumb.png"
+                  alt="Preview thumbnail of Resume website"
+                  loading="lazy"
+                  width="480"
+                  height="300"
+                />
+                <figcaption class="tile-caption">
+                  <span class="tile-title">Resume Webpage</span>
+                  <span class="tile-subtitle">Interactive CV + PDF download</span>
+                </figcaption>
+              </figure>
+            </a>
+          </article>
+
+          <!-- Tile 3 -->
+          <article class="tile" role="listitem">
+            <a href="#" class="tile-link" aria-label="Open Song of the Goat Eleusis Program project">
+              <figure class="tile-figure">
+                <img
+                  src="images/sotg-eleusis-thumb.png"
+                  alt="Preview thumbnail of Song of the Goat Eleusis Program"
+                  loading="lazy"
+                  width="480"
+                  height="300"
+                />
+                <figcaption class="tile-caption">
+                  <span class="tile-title">Song of the Goat — Eleusis Program</span>
+                  <span class="tile-subtitle">Program site concept & layout</span>
+                </figcaption>
+              </figure>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section reveal" aria-labelledby="resume-title">
+      <div class="container">
+        <h2 id="resume-title" class="section-title">Resume</h2>
+
+        <div class="resume-card" role="region" aria-label="Resume highlights and actions">
+          <h3>Highlights</h3>
+          <ul>
+            <li>Senior Technical Analyst, Touring Show Division — Cirque du Soleil (2022–2025) :contentReference[oaicite:7]{index=7}</li>
+            <li>Built and relocated full site IT (servers, switches, Wi-Fi, cabling, ISP) city-to-city; supported Windows endpoints and POS fleets. :contentReference[oaicite:8]{index=8}</li>
+            <li>Automated POS updates with Ansible + PowerShell; created technical docs and coordinated with HQ/tour teams. :contentReference[oaicite:9]{index=9}</li>
+            <li>Clear, empathetic communication; people-first IT support across international teams. :contentReference[oaicite:10]{index=10}</li>
+          </ul>
+
+          <h3>Key Skills</h3>
+          <p>Office 365, Cisco Meraki, Ansible, PowerShell, Bash, Debian-based Linux, SCCM familiarity.</p> <!-- from resume -->
+          <h3>Certifications</h3>
+          <p>ITIL 4, CompTIA Project+, freeCodeCamp Responsive Web Design, OSHA-10, Microsoft Azure AZ-900. :contentReference[oaicite:11]{index=11}</p>
+
+          <h3>Education</h3>
+          <p>B.S. in Computer Science — Western Governors University, 2023. :contentReference[oaicite:12]{index=12}</p>
+
+          <div class="resume-actions" aria-label="Resume links">
+            <!-- Replace # with your actual files/URLs -->
+            <a class="btn btn-primary" href="#" aria-label="Download resume PDF">Download PDF</a>
+            <a class="btn btn-ghost" href="https://chasejarvisresume.netlify.app" rel="noopener" aria-label="Open resume website">Open Resume Website</a> <!-- resume link -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact Me</h2>
+
+        <form id="contact-form" action="#" method="post" novalidate aria-describedby="contact-help">
+          <p id="contact-help" class="form-help">
+            All fields are required. I’ll get back to you promptly.
+          </p>
+
+          <div class="form-row">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </div>
+
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Chase Jarvis. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script/main.js" defer></script>
 </body>
 </html>
