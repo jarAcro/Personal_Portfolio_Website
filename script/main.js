@@ -12,14 +12,14 @@ const observer = new IntersectionObserver( // Construct a new observer instance
       if (entry.isIntersecting) { // Check if the section is visible enough based on the threshold
         entry.target.classList.add("in-view"); // Add 'in-view' to start the CSS transition
         observer.unobserve(entry.target); // Unobserve this section since we only need to animate once
-      }
+    }
     });
-  },
-  {
+},
+{
     root: null, // Use the viewport as the root
     rootMargin: "0px", // No extra margin around the root
     threshold: 0.15, // Trigger when 15% of the section is visible
-  }
+}
 );
 
 // Observe each section for the reveal-on-scroll effect
@@ -42,7 +42,7 @@ function setActiveLink(id) { // Accept the target section's id
     } else { // Otherwise
       link.removeAttribute("aria-current"); // Ensure aria-current is removed on non-active links
     }
-  });
+});
 }
 
 // Create another IntersectionObserver to update the active nav link as the user scrolls
@@ -52,7 +52,7 @@ const sectionObserver = new IntersectionObserver( // Construct the observer
       if (entry.isIntersecting) { // When a section becomes prominent in the viewport
         const id = entry.target.id; // Get the id of that section
         setActiveLink(id); // Update nav to reflect the current section
-      }
+    }
     });
   },
   {
