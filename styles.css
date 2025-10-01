@@ -1,7 +1,7 @@
 /* ===== Root / Theme ===== */
 :root {
   --bg: #0a0a0a;
-  --text: #ffffff;
+  --text: #cbc5c5;
   --muted: #b5b5b5;
   --line: #222;
   --accent-start: #ff7a18; /* burning orange */
@@ -19,6 +19,40 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ===== Inline link style tuned to the theme ===== */
+.inline-link {
+  color: #ffffff;                   /* stays white to fit the theme */
+  text-decoration: underline;       /* clearly clickable */
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255,255,255,0.35); /* subtle by default */
+  transition: text-decoration-color .2s ease, color .2s ease, background-size .2s ease;
+}
+.inline-link:hover,
+.inline-link:focus {
+  color: #ffffff;                   /* keep contrast high */
+  text-decoration-color: transparent; /* hide the default underline */
+  background-image: var(--accent-gradient); /* use the gradient for an underline effect */
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 2px;        /* gradient underline on hover */
+  outline: none;
+}
+
+/* If you want all anchors sitewide to use the same behavior, you can also apply the above to 'a' instead of just '.inline-link'. */
+
+/* ===== Buttons (unchanged) ===== */
+.btn { /* keep as you had */ }
+.btn-primary { background: var(--accent-gradient); border-color: transparent; }
+.btn-ghost { background: #111; }
+
+/* ===== Status text (reused for resume status) ===== */
+.form-status {
+  min-height: 1.25rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
 }
 
 body {
@@ -235,7 +269,7 @@ img {
   font-weight: 600;
   border-radius: 999px;
   padding: 0.6rem 1rem;
-  border: 1px solid #222;
+  border: 1.5px solid #222;
   color: var(--text);
 }
 .btn-primary {
@@ -245,7 +279,10 @@ img {
 .btn-ghost {
   background: #111;
 }
-
+.btn-ghost :hover{
+background-color: white;
+color: black;
+}
 /* ===== Form ===== */
 .form-help {
   color: var(--muted);

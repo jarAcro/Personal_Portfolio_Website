@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0a0a0a" />
-  <meta name="description" content="Chase Jarvis — Full-stack/IT specialist in Warsaw building elegant, accessible websites and resilient touring IT infrastructure. Portfolio, resume, and contact." />
+  <meta name="description" content="Chase Jarvis — Full-stack/IT specialist in Warsaw building elegant, accessible websites and resilient touring IT infrastructure. Portfolio and resume." />
 
   <!-- Google Fonts: Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
           <li><a class="nav-link" href="#about">About Me</a></li>
           <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#contact">Contact Me</a></li>
+          <!-- Contact removed -->
         </ul>
       </nav>
     </div>
@@ -62,7 +62,7 @@
           <p>
             I’m <strong>Chase Jarvis</strong>, an IT specialist and full-stack web developer based in <strong>Warsaw, Poland</strong>.
             I bring <strong>3+ years</strong> of hands-on Level 1/2 support and on-site/remote operations from
-            <em>Cirque du Soleil’s Touring Show Division</em>, where I kept global productions running in high-pressure environments. 
+            <em>Cirque du Soleil’s Touring Show Division</em>, where I kept global productions running in high-pressure environments.
           </p>
           <p>
             My day-to-day spans <strong>Windows 10/11</strong> user support with <strong>ServiceNow</strong>,
@@ -70,12 +70,12 @@
             <strong>Cisco Meraki</strong>. I automate repetitive work with <strong>Ansible</strong> and
             <strong>PowerShell</strong>, including POS fleet updates. On every new city stop, I built complete site
             infrastructure — racks, switches, Wi-Fi, miles of Cat5/fiber, and ISP coordination — then supported laptops,
-            servers, printers, and POS systems on show days. :contentReference[oaicite:3]{index=3} 
+            servers, printers, and POS systems on show days.
           </p>
           <p>
             Outside ops, I design <strong>accessible, fast websites</strong> in <strong>HTML5, CSS, and JavaScript</strong> and collaborate
             clearly with international teams — translating complex issues into human-friendly language. I’m originally
-            from the U.S., now settled in Poland with my wife; I’m open to hybrid/remote roles and relocation for the right fit. 
+            from the U.S., now settled in Poland with my wife; I’m open to hybrid/remote roles and relocation for the right fit.
           </p>
 
           <ul aria-label="Core capabilities">
@@ -86,9 +86,9 @@
           </ul>
 
           <p>
-            <strong>Contact:</strong> Warsaw  ·
-            <a href="mailto:chaseajarvis@gmail.com">chaseajarvis@gmail.com</a> ·
-            <a href="https://chasejarvisresume.netlify.app" rel="noopener">chasejarvisresume.netlify.app</a> 
+            <strong>Contact:</strong> Warsaw ·
+            <a class="inline-link" href="mailto:chaseajarvis@gmail.com">chaseajarvis@gmail.com</a> ·
+            <a class="inline-link" href="https://chasejarvisresume.netlify.app" rel="noopener">chasejarvisresume.netlify.app</a>
           </p>
         </div>
       </div>
@@ -168,30 +168,47 @@
         <div class="resume-card" role="region" aria-label="Resume highlights and actions">
           <h3>Highlights</h3>
           <ul>
-            <li>Senior Technical Analyst, Touring Show Division — Cirque du Soleil (2022–2025) :contentReference[oaicite:7]{index=7}</li>
-            <li>Built and relocated full site IT (servers, switches, Wi-Fi, cabling, ISP) city-to-city; supported Windows endpoints and POS fleets. :contentReference[oaicite:8]{index=8}</li>
-            <li>Automated POS updates with Ansible + PowerShell; created technical docs and coordinated with HQ/tour teams. :contentReference[oaicite:9]{index=9}</li>
-            <li>Clear, empathetic communication; people-first IT support across international teams. :contentReference[oaicite:10]{index=10}</li>
+            <li>Senior Technical Analyst, Touring Show Division — Cirque du Soleil (2022–2025)</li>
+            <li>Built and relocated full site IT (servers, switches, Wi-Fi, cabling, ISP) city-to-city; supported Windows endpoints and POS fleets.</li>
+            <li>Automated POS updates with Ansible + PowerShell; created technical docs and coordinated with HQ/tour teams.</li>
+            <li>Clear, empathetic communication; people-first IT support across international teams.</li>
           </ul>
 
           <h3>Key Skills</h3>
-          <p>Office 365, Cisco Meraki, Ansible, PowerShell, Bash, Debian-based Linux, SCCM familiarity.</p> <!-- from resume -->
+          <p>Office 365, Cisco Meraki, Ansible, PowerShell, Bash, Debian-based Linux, SCCM familiarity.</p>
+
           <h3>Certifications</h3>
-          <p>ITIL 4, CompTIA Project+, freeCodeCamp Responsive Web Design, OSHA-10, Microsoft Azure AZ-900. :contentReference[oaicite:11]{index=11}</p>
+          <p>ITIL 4, CompTIA Project+, freeCodeCamp Responsive Web Design, OSHA-10, Microsoft Azure AZ-900.</p>
 
           <h3>Education</h3>
-          <p>B.S. in Computer Science — Western Governors University, 2023. :contentReference[oaicite:12]{index=12}</p>
+          <p>B.S. in Computer Science — Western Governors University, 2023.</p>
 
           <div class="resume-actions" aria-label="Resume links">
-            <!-- Replace # with your actual files/URLs -->
-            <a class="btn btn-primary" href="#" aria-label="Download resume PDF">Download PDF</a>
-            <a class="btn btn-ghost" href="https://chasejarvisresume.netlify.app" target="_blank" rel="noopener" aria-label="Open resume website">Open Resume Website</a> <!-- resume link -->
+            <!-- Set your actual PDF path here (example path below). -->
+            <a id="download-resume"
+               class="btn btn-primary"
+               href="#"
+               role="button"
+               data-file="pdf/Chase-Jarvis-Resume.pdf"
+               aria-label="Download resume PDF">
+              Download PDF
+            </a>
+
+            <a class="btn btn-ghost"
+               href="https://chasejarvisresume.netlify.app"
+               target="_blank"
+               rel="noopener"
+               aria-label="Open resume website">
+              Open Resume Website
+            </a>
           </div>
+
+          <!-- Live region for accessible status updates -->
+          <p id="resume-status" class="form-status" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>
-
-   
+  </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
