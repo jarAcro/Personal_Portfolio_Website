@@ -1,64 +1,4 @@
-// Get the current year element in the footer
-const yearEl = document.getElementById("year"); // Select the span that will show the year
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear(); // Set the span to the current year
-}
 
-// Cache all section elements we want to reveal on scroll
-const revealSections = document.querySelectorAll(".reveal"); // NodeList of sections with the 'reveal' class
-
-// Create an IntersectionObserver to trigger fade-in when sections enter the viewport
-const observer = new IntersectionObserver(
-  (entries) => { // Callback runs whenever observed elements intersect with the viewport
-    entries.forEach((entry) => { // Iterate over each intersection entry
-      if (entry.isIntersecting) { // Check if the section is visible enough based on the threshold
-        entry.target.classList.add("in-view"); // Add 'in-view' to start the CSS transition
-        observer.unobserve(entry.target); // Unobserve this section since we only need to animate once
-      }
-    });
-  },
-  {
-    root: null, // Use the viewport as the root
-    rootMargin: "0px", // No extra margin around the root
-    threshold: 0.15, // Trigger when 15% of the section is visible
-  }
-);
-
-// Observe each section for the reveal-on-scroll effect
-revealSections.forEach((section) => observer.observe(section)); // Attach the observer to each section
-
-// ----- Active nav link syncing -----
-const navLinks = document.querySelectorAll(".nav-link"); // NodeList of nav anchor elements
-const sections = Array.from(document.querySelectorAll("main section")); // All major sections in main
-
-function setActiveLink(id) {
-  navLinks.forEach((link) => {
-    const isActive = link.getAttribute("href") === `#${id}`;
-    link.classList.toggle("active", isActive);
-    if (isActive) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
-  });
-}
-
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        setActiveLink(id);
-      }
-    });
-  },
-  {
-    root: null,
-    threshold: 0.6, // Consider a section "active" when 60% is visible
-  }
-);
-
-sections.forEach((sec) => sectionObserver.observe(sec));
 
 // ----- Resume download handling -----
 const downloadBtn = document.getElementById("download-resume");
@@ -90,3 +30,130 @@ if (downloadBtn) {
     }
   });
 }
+
+   document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#pinContainer",
+                    start: "top top",
+                    end: "+=4000", // Makes the scroll area 4000px long, determining speed
+                    scrub: 1,      // Smooth scrubbing effect (1 second catchup)
+                    pin: true,     // Pins the container so it doesn't move vertically
+                    anticipatePin: 1
+                }
+            });
+
+            // --- ANIMATION SEQUENCE ---
+
+            // ================= PART 1: BUILD =================
+            // Elements fly in from various directions to form Part 1
+            tl.set("#section1", { autoAlpha: 1 }) // Make visible
+              .from(".s1-bg", { 
+                  scale: 0, 
+                  opacity: 0, 
+                  duration: 2, 
+                  stagger: 0.2, 
+                  ease: "elastic.out(1, 0.5)" 
+              })
+              .from(".s1-line", { 
+                  height: 0, 
+                  duration: 1.5, 
+                  ease: "power3.inOut" 
+              }, "<") // Start at same time as previous
+              .from(".s1-el", { 
+                  y: 100, 
+                  opacity: 0, 
+                  duration: 1, 
+                  stagger: 0.2, 
+                  ease: "power2.out" 
+              }, "-=1"); // Overlap slightly
+
+            // --- HOLD PART 1 ---
+            tl.to({}, { duration: 1 }); // Empty tween to pause for reading
+
+            // ================= PART 1: UNBUILD =================
+            // Elements fly OUT (Unbuild)
+            tl.to(".s1-el", { 
+                y: -100, 
+                opacity: 0, 
+                stagger: 0.1, 
+                duration: 0.5 
+            })
+            .to(".s1-line", { height: 0, duration: 0.5 }, "<")
+            .to(".s1-bg", { scale: 0, opacity: 0, duration: 0.5 }, "<")
+            .set("#section1", { autoAlpha: 0 }); // Hide completely
+
+            // ================= PART 2: BUILD =================
+            tl.set("#section2", { autoAlpha: 1 })
+              .from(".s2-card", {
+                  // Cards fly in from different directions
+                  x: (i) => i % 2 === 0 ? -1000 : 1000, // Even left, Odd right
+                  y: (i) => i === 1 ? 1000 : 0,         // Middle card from bottom
+                  rotation: (i) => i % 2 === 0 ? -45 : 45,
+                  opacity: 0,
+                  duration: 2,
+                  stagger: 0.2,
+                  ease: "power4.out"
+              });
+
+            // --- HOLD PART 2 ---
+            tl.to({}, { duration: 1 });
+
+            // ================= PART 2: UNBUILD =================
+            tl.to(".s2-card", {
+                scale: 0,
+                rotation: 0,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.in(1.7)"
+            })
+            .set("#section2", { autoAlpha: 0 });
+
+            // ================= PART 3: BUILD =================
+            tl.set("#section3", { autoAlpha: 1 })
+              .from(".s3-bg", { opacity: 0, duration: 1 })
+              .from(".s3-char", {
+                  y: -200,
+                  opacity: 0,
+                  rotateX: 180,
+                  stagger: 0.1,
+                  duration: 1.5,
+                  ease: "bounce.out"
+              })
+              .from(".s3-word-btm", {
+                  scale: 5,
+                  opacity: 0,
+                  duration: 0.5,
+                  ease: "power2.in"
+              }, "-=0.5")
+              .from(".s3-btn-wrapper", {
+                  y: 100,
+                  opacity: 0,
+                  duration: 0.5
+              })
+              .from(".s3-icon", {
+                  y: 20,
+                  opacity: 0,
+                  stagger: 0.1
+              });
+              
+            // Progress Bar Logic (External to main timeline to track total progress)
+            gsap.to("#progressBar", {
+                width: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#pinContainer",
+                    start: "top top",
+                    end: "+=4000",
+                    scrub: 0
+                }
+            });
+            
+            // Button restart logic
+            document.querySelector("button").addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });

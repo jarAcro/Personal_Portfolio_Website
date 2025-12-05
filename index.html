@@ -1,224 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <meta name="description" content="Chase Jarvis — Full-stack/IT specialist in Warsaw building elegant, accessible websites and resilient touring IT infrastructure. Portfolio and resume." />
-
-  <!-- Google Fonts: Roboto Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <title>Chase Jarvis — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Jarvis - Portfolio</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger (CDNs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="/script/main.js"></script>
+   <link rel="stylesheet" href="styles.css">
+   
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
-  <a class="skip-link" href="#about">Skip to content</a>
 
-  <!-- Accessible, sticky header -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="#about" aria-label="Go to top of page">
-        <span class="brand-mark" aria-hidden="true"><img src="images/brand.webp"></span>
-        <span class="brand-text">Chase Jarvis</span>
-      </a>
+    <!-- Scroll Progress Indicator -->
+    <div class="progress-bar" id="progressBar"></div>
 
-      <nav class="site-nav" aria-label="Primary">
-        <ul>
-          <li><a class="nav-link" href="#about">About Me</a></li>
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-          <!-- Contact removed -->
-        </ul>
-      </nav>
+    <!-- Main Wrapper -->
+    <div class="pin-container" id="pinContainer">
+
+        <!-- ================= SECTION 1: INTRODUCTION ================= -->
+        <section class="section-slide" id="section1">
+            <!-- Decorative Background Elements -->
+            <div class="s1-bg absolute top-10 left-10 w-32 h-32 border-2 border-pink-500 rounded-full opacity-20"></div>
+            <div class="s1-bg absolute bottom-20 right-20 w-64 h-64 border border-blue-500 rounded-full opacity-10"></div>
+            
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="s1-el text-xl md:text-2xl text-pink-500 tracking-widest mb-4 uppercase font-bold">Portfolio 2025</h2>
+                <h1 class="s1-el text-6xl md:text-9xl font-bold mb-6 leading-tight">
+                    <span class="block text-white">CHASE</span>
+                    <span class="block text-outline">JARVIS</span>
+                </h1>
+                <div class="s1-el inline-block border-t border-b border-gray-700 py-2 px-8">
+                    <p class="text-gray-300 text-lg md:text-xl tracking-wide uppercase">
+                        IT Support <span class="text-pink-500 mx-2">//</span> Frontend Webdev
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Floating architectural lines -->
+            <div class="s1-line absolute h-full w-[1px] bg-white/10 left-1/4 top-0"></div>
+            <div class="s1-line absolute h-full w-[1px] bg-white/10 right-1/4 top-0"></div>
+        </section>
+
+        <!-- ================= SECTION 2: PORTFOLIO & RESUME ================= -->
+        <section class="section-slide" id="section2">
+            <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                <h1 class="text-[20vw] font-bold text-white">WORK</h1>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row gap-8 justify-center items-center h-full">
+                    
+                    <!-- Card 1: Web Dev -->
+                    <div class="s2-card w-full md:w-1/3 bg-gray-900/80 border border-gray-800 p-8 rounded-xl backdrop-blur-sm hover:border-blue-500 transition-colors cursor-pointer group">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <!-- Code Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Frontend Projects</h3>
+                        <p class="text-gray-400 mb-4">React, Tailwind, and GSAP based interfaces focusing on performance and interaction.</p>
+                        <span class="text-sm text-blue-400 font-bold uppercase tracking-wider">View Gallery &rarr;</span>
+                    </div>
+
+                    <!-- Card 2: IT Support -->
+                    <div class="s2-card w-full md:w-1/3 bg-gray-900/80 border border-gray-800 p-8 rounded-xl backdrop-blur-sm mt-0 md:mt-24 hover:border-purple-500 transition-colors cursor-pointer group">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                             <!-- Terminal/Server Icon -->
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                              </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">IT Support</h3>
+                        <p class="text-gray-400 mb-4">Hardware diagnostics, network troubleshooting, and enterprise system administration.</p>
+                        <span class="text-sm text-purple-400 font-bold uppercase tracking-wider">View Case Studies &rarr;</span>
+                    </div>
+
+                    <!-- Card 3: Resume -->
+                    <div class="s2-card w-full md:w-1/3 bg-gray-900/80 border border-gray-800 p-8 rounded-xl backdrop-blur-sm hover:border-pink-500 transition-colors cursor-pointer group">
+                        <div class="w-12 h-12 bg-pink-600 rounded-lg mb-6 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <!-- Document Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                              </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Resume / CV</h3>
+                        <p class="text-gray-400 mb-4">Detailed work history, certifications, and technical skill breakdown.</p>
+                        <span class="text-sm text-pink-400 font-bold uppercase tracking-wider">Download PDF &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: CONCLUSION ================= -->
+        <section class="section-slide" id="section3">
+            <div class="s3-bg absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-black"></div>
+            
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <div class="s3-content overflow-hidden">
+                    <h2 class="text-5xl md:text-7xl font-bold mb-8">
+                        <span class="inline-block s3-char">S</span>
+                        <span class="inline-block s3-char">E</span>
+                        <span class="inline-block s3-char">Q</span>
+                        <span class="inline-block s3-char">U</span>
+                        <span class="inline-block s3-char">E</span>
+                        <span class="inline-block s3-char">N</span>
+                        <span class="inline-block s3-char">C</span>
+                        <span class="inline-block s3-char">E</span>
+                        <br />
+                        <span class="text-blue-500 inline-block s3-word-btm">COMPLETE</span>
+                    </h2>
+                </div>
+
+                <div class="s3-btn-wrapper mt-10">
+                    <button class="px-10 py-4 bg-white text-black font-bold rounded-full text-lg hover:bg-gray-200 transition-colors transform hover:scale-105">
+                        Restart System
+                    </button>
+                </div>
+
+                <div class="s3-footer mt-20 flex justify-center gap-6 text-gray-500">
+                    <span class="s3-icon hover:text-white cursor-pointer transition-colors">Github</span>
+                    <span class="s3-icon hover:text-white cursor-pointer transition-colors">LinkedIn</span>
+                    <span class="s3-icon hover:text-white cursor-pointer transition-colors">Email</span>
+                </div>
+            </div>
+        </section>
+
     </div>
-  </header>
 
-  <main id="main" tabindex="-1">
-    <!-- ABOUT -->
-    <section id="about" class="section reveal" aria-labelledby="about-title">
-      <div class="container">
-        <h1 id="about-title" class="section-title">
-          <span class="accent-text">About Me</span>
-        </h1>
+    <!-- Hints for user -->
+    <div class="fixed bottom-10 right-10 text-white/50 animate-pulse text-sm z-50 pointer-events-none hidden md:block">
+        SCROLL TO BUILD
+    </div>
 
-        <figure class="headshot-figure">
-          <img
-            src="images/headshot.webp"
-            alt="Headshot of Chase Jarvis"
-            width="560"
-            height="560"
-            class="headshot"
-          />
-          <figcaption class="visually-hidden">Professional headshot</figcaption>
-        </figure>
-
-        <div class="about-copy">
-          <p>
-            I’m <strong>Chase Jarvis</strong>, an IT specialist and front end web developer based in <strong>Warsaw, Poland</strong>.
-            I bring <strong>3+ years</strong> of hands-on Level 1/2 support and on-site/remote operations from
-            <em>Cirque du Soleil’s Touring Show Division</em>, where I kept global productions running in high-pressure environments.
-          </p>
-          <p>
-            My day-to-day spans <strong>Windows 10/11</strong> user support with <strong>ServiceNow</strong>,
-            <strong>Active Directory/Entra ID</strong>, <strong>Intune</strong>, <strong>Office 365</strong>, and
-            <strong>Cisco Meraki</strong>. I automated repetitive work with <strong>Ansible</strong> and
-            <strong>PowerShell</strong>, including POS fleet updates. On every new city stop, I built complete site
-            infrastructure — racks, switches, Wi-Fi, miles of Cat5/fiber, and ISP coordination — then supported laptops,
-            servers, printers, and POS systems on show days.
-          </p>
-         <p>
-  Outside ops, I focus on <strong>creating</strong> and <strong>designing</strong> websites that help professionals and companies
-  establish a more legitimate and trustworthy online presence. 
-  I also enjoy <strong>playing classical guitar</strong> and recently performed with an orchestra for the first time in Bydgoszcz, Poland. 
-  Beyond music, I’m passionate about <strong>travel</strong>, <strong>snowboarding</strong>, <strong>motorcycles</strong> and exploring new cultures with my wife.
   
-</p>
-
-          <ul aria-label="Core capabilities">
-            <li>Endpoint + account management: AD/Entra ID, Intune, MFA, O365</li>
-            <li>Networking: TCP/IP, DNS, DHCP, VPN, Wi-Fi; Cisco Meraki & security appliances</li>
-            <li>Automation & scripting: Ansible, PowerShell, Bash; SCCM familiarity</li>
-            <li>Web: Semantic, responsive, A11y-first front-ends (HTML/CSS/JS)</li>
-          </ul>
-
-          <p>
-            <strong>Contact:</strong> Warsaw, Poland ·
-            <a class="inline-link" href="mailto:chaseajarvis@gmail.com">chaseajarvis@gmail.com</a> 
-           
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section reveal" aria-labelledby="portfolio-title">
-      <div class="container">
-        <h2 id="portfolio-title" class="section-title">Portfolio</h2>
-
-        <div class="portfolio-grid" role="list">
-          <!-- Tile 1 -->
-          <article class="tile" role="listitem">
-            <a href="https://edytakrzemien.com" class="tile-link" aria-label="Open Edytakrzemien.pl project">
-              <figure class="tile-figure">
-                <img
-                  src="images/edyta.webp"
-                  alt="Preview thumbnail of Edytakrzemien.pl"
-                  loading="lazy"
-                  width="480"
-                  height="300"
-                />
-                <figcaption class="tile-caption">
-                  <span class="tile-title">Edytakrzemien.pl</span>
-                  <span class="tile-subtitle">Artist website design & build, currently under construction</span>
-                </figcaption>
-              </figure>
-            </a>
-          </article>
-
-          <!-- Tile 2 -->
-          <article class="tile" role="listitem">
-            <a href="https://chasejarvisresume.netlify.app/" target="_blank" class="tile-link" aria-label="Open Resume webpage project">
-              <figure class="tile-figure">
-                <img
-                  src="images/resume-site.webp"
-                  alt="Preview thumbnail of Resume website"
-                  loading="lazy"
-                  width="480"
-                  height="300"
-                />
-                <figcaption class="tile-caption">
-                  <span class="tile-title">Resume Webpage</span>
-                  <span class="tile-subtitle">Interactive CV</span>
-                </figcaption>
-              </figure>
-            </a>
-          </article>
-
-          <!-- Tile 3 -->
-          <article class="tile" role="listitem">
-            <a href="https://eleusisprogram.netlify.app/" target="_blank" class="tile-link" aria-label="Open Song of the Goat Eleusis Program project">
-              <figure class="tile-figure">
-                <img
-                  src="images/sotg.webp"
-                  alt="Preview thumbnail of Song of the Goat Eleusis Program"
-                  loading="lazy"
-                  width="480"
-                  height="300"
-                />
-                <figcaption class="tile-caption">
-                  <span class="tile-title">Song of the Goat — Eleusis Program</span>
-                  <span class="tile-subtitle">Program site concept & layout, built for mobile phones</span>
-                </figcaption>
-              </figure>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section id="resume" class="section reveal" aria-labelledby="resume-title">
-      <div class="container">
-        <h2 id="resume-title" class="section-title">Resume</h2>
-
-        <div class="resume-card" role="region" aria-label="Resume highlights and actions">
-          <h3>Highlights</h3>
-          <ul>
-            <li>Senior Technical Analyst, Touring Show Division — Cirque du Soleil (2022–2025)</li>
-            <li>Built and relocated full site IT (servers, switches, Wi-Fi, cabling, ISP) city-to-city; supported Windows endpoints and POS fleets.</li>
-            <li>Automated POS updates with Ansible + PowerShell; created technical docs and coordinated with HQ/tour teams.</li>
-            <li>Clear, empathetic communication; people-first IT support across international teams.</li>
-          </ul>
-
-          <h3>Key Skills</h3>
-          <p>Office 365, Cisco Meraki, Ansible, PowerShell, Bash, Debian-based Linux, SCCM familiarity.</p>
-
-          <h3>Certifications</h3>
-          <p>ITIL 4, CompTIA Project+, freeCodeCamp Responsive Web Design, OSHA-10, Microsoft Azure AZ-900.</p>
-
-          <h3>Education</h3>
-          <p>B.S. in Computer Science — Western Governors University, 2023.</p>
-
-          <div class="resume-actions" aria-label="Resume links">
-            <!-- Set your actual PDF path here (example path below). -->
-            <a id="download-resume"
-               class="btn btn-primary"
-               href="#"
-               role="button"
-               data-file="pdf/Chase-Jarvis-Resume.pdf"
-               aria-label="Download resume PDF">
-              Download PDF
-            </a>
-
-            <a class="btn btn-ghost"
-               href="https://chasejarvisresume.netlify.app"
-               target="_blank"
-               rel="noopener"
-               aria-label="Open resume website">
-              Open Resume Website
-            </a>
-          </div>
-
-          <!-- Live region for accessible status updates -->
-          <p id="resume-status" class="form-status" role="status" aria-live="polite"></p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Chase Jarvis. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script/main.js" defer></script>
 </body>
 </html>
