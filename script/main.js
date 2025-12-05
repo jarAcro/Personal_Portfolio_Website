@@ -1,38 +1,9 @@
-
-
-// ----- Resume download handling -----
-const downloadBtn = document.getElementById("download-resume");
-const resumeStatus = document.getElementById("resume-status");
-
-if (downloadBtn) {
-  downloadBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    const filePath = downloadBtn.getAttribute("data-file"); 
-    if (!filePath) {
-      if (resumeStatus) {
-        resumeStatus.textContent = "Resume file path is not configured.";
-        resumeStatus.style.color = "#ffb199";
-      }
-      return;
-    }
-
-    const a = document.createElement("a");
-    a.href = filePath;
-    a.download = "Chase-Jarvis-Resume.pdf"; // nice clean filename
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    if (resumeStatus) {
-      resumeStatus.textContent = "Downloading resume…";
-      resumeStatus.style.color = "#9be29b";
-    }
-  });
-}
-
-   document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger);
+
+            // Set initial state for robustness (ensures all but section1 are hidden and low z-index)
+            gsap.set("#section2, #section3", { autoAlpha: 0, zIndex: 0 });
+            gsap.set("#section1", { autoAlpha: 1, zIndex: 10 }); // Section 1 visible and on top
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -47,9 +18,9 @@ if (downloadBtn) {
 
             // --- ANIMATION SEQUENCE ---
 
-            // ================= PART 1: BUILD =================
-            // Elements fly in from various directions to form Part 1
-            tl.set("#section1", { autoAlpha: 1 }) // Make visible
+            // ================= PART 1: BUILD (Starts visible due to initial gsap.set) =================
+            tl
+              // S1 is already visible and on top, start building elements
               .from(".s1-bg", { 
                   scale: 0, 
                   opacity: 0, 
@@ -83,10 +54,10 @@ if (downloadBtn) {
             })
             .to(".s1-line", { height: 0, duration: 0.5 }, "<")
             .to(".s1-bg", { scale: 0, opacity: 0, duration: 0.5 }, "<")
-            .set("#section1", { autoAlpha: 0 }); // Hide completely
+            .set("#section1", { autoAlpha: 0, zIndex: 0 }); // SECTION 1: HIDDEN & BACK
 
             // ================= PART 2: BUILD =================
-            tl.set("#section2", { autoAlpha: 1 })
+            tl.set("#section2", { autoAlpha: 1, zIndex: 10 }) // SECTION 2: VISIBLE & TOP
               .from(".s2-card", {
                   // Cards fly in from different directions
                   x: (i) => i % 2 === 0 ? -1000 : 1000, // Even left, Odd right
@@ -110,10 +81,10 @@ if (downloadBtn) {
                 stagger: 0.1,
                 ease: "back.in(1.7)"
             })
-            .set("#section2", { autoAlpha: 0 });
+            .set("#section2", { autoAlpha: 0, zIndex: 0 }); // SECTION 2: HIDDEN & BACK
 
             // ================= PART 3: BUILD =================
-            tl.set("#section3", { autoAlpha: 1 })
+            tl.set("#section3", { autoAlpha: 1, zIndex: 10 }) // SECTION 3: VISIBLE & TOP
               .from(".s3-bg", { opacity: 0, duration: 1 })
               .from(".s3-char", {
                   y: -200,
